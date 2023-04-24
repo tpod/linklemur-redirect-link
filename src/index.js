@@ -38,8 +38,6 @@ async function saveVisit(request, path) {
 	const createLinkVisitResult = await conn.execute(`
 	insert into link_visits (id, host, country, user_agent, accept_language, organization, timezone, continent, latitude, longitude, link_id, updated_at)
 	values (UUID(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now());`, params);
-
-	console.log(createLinkVisitResult)
 }
 
 async function handleRedirect(path) {
@@ -53,7 +51,7 @@ async function handleRedirect(path) {
 
 	let redirectUrl = new URL(kv);
 
-	if (redirectUrl.hostname == "linklemur.com" || redirectUrl.hostname == "www.linklemur.com")
+	if (redirectUrl.hostname == WORKER_HOST || redirectUrl.hostname == "www." + WORKER_HOST)
 		return new Response("Infinite loop not allowed.");
 
 	return Response.redirect(redirectUrl, 302);
