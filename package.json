@@ -1,0 +1,16 @@
+{
+  "name": "linklemur-redirect-link",
+  "version": "0.0.0",
+  "devDependencies": {
+    "wrangler": "2.6.2"
+  },
+  "private": true,
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler publish"
+  },
+  "dependencies": {
+    "@planetscale/database": "1.6.0",
+    "ua-parser-js": "^1.0.35"
+  }
+}

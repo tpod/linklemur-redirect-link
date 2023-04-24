@@ -1,0 +1,7 @@
+name = "linklemur-redirect-link"
+main = "src/index.js"
+compatibility_date = "2023-04-22"
+
+kv_namespaces = [
+    { binding = "link", preview_id = "2a6eb507aa1a44d0885dc5aace31f37f", id = "96fb913616bb4439a8d7552ba71d11bc" }
+]
